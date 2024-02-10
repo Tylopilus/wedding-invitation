@@ -1,0 +1,59 @@
+---
+import 'open-props/normalize/light';
+import '@fontsource/cormorant-garamond';
+import '@fontsource-variable/inter';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: #cfa85b;
+    --text: #2f240e;
+    --secondary: #cfa7590d;
+    --background: #f6f5f4;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-weight-4: 400;
+    --font-weight-5: 500;
+    --font-size-xxl: 8.75rem;
+    --font-size-xl: 4.5rem;
+    --font-size-lg: 3rem;
+    --font-size-md: 2rem;
+    --font-size-normal: 1rem;
+
+    --font-h1: var(--font-weight-5) var(--font-size-xxl) var(--font-serif);
+    --font-h2: var(--font-weight-5) var(--font-size-xl) var(--font-serif);
+    --font-h3: var(--font-weight-5) var(--font-size-lg) var(--font-serif);
+    --font-h4: var(--font-weight-5) var(--font-size-md) var(--font-serif);
+    --font-text: var(--font-weight-4) var(--font-size-normal) var(--font-sans);
+  }
+  html {
+    color: var(--text);
+    font-family: var(--font-sans);
+    background-color: var(--background);
+  }
+  body {
+    padding-block: 12rem;
+    max-inline-size: 1440px;
+    margin-inline: auto;
+  }
+</style>

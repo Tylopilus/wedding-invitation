@@ -1,0 +1,274 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImage from '../images/hero.jpg';
+import leaf from '../images/leaf.png';
+import SchwazerBock from '../images/Schwarzer-Bock.jpg';
+import stock from '../images/stock.jpg';
+import us from '../images/us.jpg';
+import selectHotel from '../images/Select-Hotel.jpg';
+import townHotel from '../images/Town-Hotel.jpg';
+import map from '../images/map.jpg';
+---
+
+<Layout title="Helge und Belinda heiraten">
+  <main>
+    <section class="hero">
+      <h1><span>Wir werden heiraten</span>Helge & Belinda</h1>
+      <p>Samstag, den 01. Juni 2024 Kurhausplatz 1, Wiesbaden</p>
+      <Image src={heroImage} alt={'bla'} />
+    </section>
+    <section class="ablauf">
+      <h2>
+        <span>Wir feiern die liebe<br />mit denen, die wir lieben</span>
+      </h2>
+      <div class="wrapper">
+        <Image src={stock} alt={'Stock'} />
+        <div class="details">
+          <Image src={leaf} alt="leaf" />
+          <ol>
+            <li>
+              <h4>Zeremonie</h4>
+              <dl>
+                <dt>12:30 - 13:00 Uhr</dt>
+                <dd>Kurhausplatz 1, Wiesbaden</dd>
+              </dl>
+            </li>
+            <li>
+              <h4>Gl&uuml;w&uuml;nsche</h4>
+              <dl>
+                <dt>13:00 - 13:15 Uhr</dt>
+              </dl>
+            </li>
+            <li>
+              <h4>Gruppenfoto</h4>
+              <dl>
+                <dt>13:15 - 13:35 Uhr</dt>
+                <dd>Drau&szlig;en vor dem Eingang</dd>
+              </dl>
+            </li>
+            <li>
+              <h4>Paarfotos</h4>
+              <dl>
+                <dt>13:35 - 14:15 Uhr</dt>
+                <dd>Nur Braut und Br&auml;utigam</dd>
+              </dl>
+            </li>
+            <li>
+              <h4>Sektempfang</h4>
+              <dl>
+                <dt>13:35 - 14:15 Uhr</dt>
+                <dd>Im Benners, direkt neben dem Eingang</dd>
+              </dl>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <div>
+      <Image src={us} alt={'Wir'} />
+    </div>
+    <section class="reiseundunterkunft">
+      <section class="reise">
+        <h2>Reise und Unterkunft</h2>
+        <h3>Kurhausplatz 1, 65189 Wiesbaden</h3>
+        <Image src={map} alt="google map" />
+      </section>
+      <section class="hotels">
+        <h3>Hotels</h3>
+        <div>
+          <article>
+            <Image src={SchwazerBock} alt="Schwarzer Bock" />
+            <h4>Schwarzer Bock</h4>
+            <p>
+              Das Hotel Schwarzer Bock ist ein traditionsreiches Hotel in
+              Wiesbaden. Es wurde 1486 erstmals urkundlich erwähnt und ist damit
+              eines der ältesten Hotels Deutschlands.
+            </p>
+            <div>
+              <a
+                target="_blank"
+                href="https://www.radissonhotels.com/de-de/hotels/radisson-blu-wiesbaden-schwarzer-bock">
+                Website besuchen
+              </a>
+            </div>
+          </article>
+          <article>
+            <Image src={selectHotel} alt="Select Hotel" />
+            <h4>Select Hotel Wiesbaden City</h4>
+            <p>
+              Das Hotel befindet sich In unmittelbarer Nähe von zahlreiche
+              Sightseeing-Hotspots wie die historische Altstadt.
+            </p>
+            <div>
+              <a
+                href="https://www.select-hotels.com/select-hotel-wiesbaden-city"
+                target="_blank">
+                Website besuchen
+              </a>
+            </div>
+          </article>
+          <article>
+            <Image src={townHotel} alt="Town Hotel" />
+            <h4>Town Hotel</h4>
+            <p>
+              Town Hotel Wiesbaden liegt in einer ruhigen Umgebung, zählt 24
+              moderne und helle Zimmer in einem freundlichen Ambiente.
+            </p>
+            <div>
+              <a href="https://www.townhotel.de/" target="_blank">
+                Website besuchen
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+  <style>
+    h1 {
+      font: var(--font-h1);
+      span {
+        display: block;
+        font: var(--font-h3);
+        letter-spacing: 0.6rem;
+      }
+    }
+    h2 {
+      font: var(--font-h2);
+    }
+    h3 {
+      font: var(--font-h3);
+    }
+    h4 {
+      font: var(--font-h4);
+    }
+
+    .hero {
+      p {
+        display: block;
+        max-inline-size: 26.5rem;
+        font: var(--font-h4);
+        margin-block-start: 0.5rem;
+      }
+      img {
+        margin-inline-start: auto;
+      }
+    }
+
+    .ablauf {
+      margin-block-start: -4rem;
+      background-color: var(--secondary);
+      position: relative;
+      padding-block: 10rem;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20%;
+        height: 1rem;
+        background-color: var(--accent);
+      }
+      h2 {
+        display: block;
+      }
+      .wrapper {
+        margin-block-start: 4rem;
+        display: flex;
+        max-inline-size: 1000px;
+        margin-inline: auto;
+        justify-content: space-between;
+        align-items: center;
+
+        .details {
+          position: relative;
+          img {
+            position: absolute;
+            top: -70%;
+            right: -20%;
+            scale: 1.5;
+          }
+          ol {
+            list-style-type: none;
+            counter-reset: items;
+            li {
+              counter-increment: items;
+              &:before {
+                content: '0' counter(items);
+                font: var(--font-h4);
+                display: inline;
+                margin-inline-end: 0.5rem;
+              }
+              h4 {
+                display: inline;
+              }
+              dl {
+                margin-inline-start: 2.5rem;
+              }
+            }
+            li + li {
+              margin-block-start: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .reiseundunterkunft {
+      margin-block-start: 8rem;
+      .reise {
+        h3 {
+          margin-block-start: 1rem;
+        }
+        img {
+          margin-block-start: 0.5rem;
+          width: 100%;
+        }
+      }
+      .hotels {
+        margin-block-start: 4rem;
+        > div {
+          margin-block-start: 1rem;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 2rem;
+          @media screen and (min-width: 768px) {
+            justify-content: space-between;
+          }
+
+          article {
+            /* flex: 1; */
+            flex-grow: 1;
+            flex-basis: 424px;
+            max-inline-size: 424px;
+            display: flex;
+            flex-direction: column;
+
+            h4 {
+              margin-block-start: 1rem;
+            }
+            p {
+              margin-block-start: 1rem;
+            }
+            div {
+              margin-block-start: auto;
+              a {
+                display: block;
+                margin-block-start: 1rem;
+                padding-block: 0.5rem;
+                padding-inline: 1rem;
+                background-color: var(--secondary);
+                border: 1px solid var(--accent);
+                border-radius: 0.25rem;
+                width: fit-content;
+                color: var(--text-color);
+              }
+            }
+          }
+        }
+      }
+    }
+  </style>
+</Layout>
