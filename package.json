@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/cloudflare": "^9.0.0",
     "@fontsource-variable/inter": "^5.0.16",
     "@fontsource/cormorant-garamond": "^5.0.8",
     "astro": "^4.2.7",
